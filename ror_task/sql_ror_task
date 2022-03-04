@@ -1,0 +1,19 @@
+Даны таблицы Employeers и Departments.
+
+a:
+Таблица Employeers. Получить список всех сотрудников из 50-го и 80-го
+отдела(department_id) у которых есть бонус(значение commission_pct не пустое)
+
+SELECT *
+    FROM Employeers E
+    RIGHT JOIN Departments D ON (E.department_id = D.department_id)
+    WHERE FIRST_NAME IS NULL;
+
+b:
+Таблицы Employeers и Departments.
+Найдите департаменты без единого сотрудника
+
+SELECT *
+    FROM Employees
+    WHERE (DEPARTMENT_ID = 50 OR DEPARTMENT_ID = 80)
+    AND COMMISSION_PCT IS NOT NULL;
