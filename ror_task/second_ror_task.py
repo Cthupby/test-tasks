@@ -7,10 +7,10 @@
 '''
 
 
-arr1 = [19, 35, 47, 17, 3, 100]
+arr = [19, 35, 47, 17, 3, 100]
 
-def task_1(arr1):
-    arr_mass = [int((x / 3) - 2) for x in arr1 if x >= 6]
+def task_1(arr):
+    arr_mass = [int((x / 3) - 2) for x in arr if x >= 6]
     print(arr_mass)
 
     m = 0
@@ -19,5 +19,4 @@ def task_1(arr1):
     print(m)
 
 
-task_1(arr1)
-
+task_1(arr)
