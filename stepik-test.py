@@ -1,4 +1,5 @@
-""" Тестовое задание
+''' 
+Тестовое задание
 Создайте новый класс Hotel, который содержит поля название,
 стоимость, количество звездочек.
 Экземпляры класса положите в список hotels.
@@ -8,7 +9,7 @@
 – вывести в формате "отель – количество звезд – стоимость"
 – если таких вариантов меньше 3 – вывести сколько есть
 – если таких вариантов нет – вывести "вариантов нет"
-"""
+'''
 
 
 class Hotel:
@@ -16,10 +17,9 @@ class Hotel:
         self.name = name
         self.stars = stars
         self.price = price
-
+        
     def __str__(self):
         return "{} {} {}".format(self.name, self.stars, self.price)
-
 
 hotels = [
     Hotel('Atlantic Castle Hotel', 3, 45000),
@@ -43,5 +43,6 @@ for hotel in s_hotels:
         print(hotel)
         i = i + 1
         break
+        
 if i == 0:
     print('вариантов нет')
