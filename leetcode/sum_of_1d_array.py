@@ -24,8 +24,8 @@ class Solution:
 def test_solution(nums, result):
     solution = Solution.runningSum(Solution, nums)
     assert solution == result, \
-        "wrong answer {}, should be {}".format(solution, result)
-    return "assepted"
+        "Wrong answer {}, should be {}".format(solution, result)
+    return "assepted - {} equal to {}".format(solution, result)
 
 
 print("Test #1: " + test_solution([1,2,3,4], [1,3,6,10]))
