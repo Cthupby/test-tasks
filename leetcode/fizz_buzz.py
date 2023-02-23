@@ -13,8 +13,11 @@ Example:
 Input: n = 3
 Output: ["1","2","Fizz"]
 """
+from typing import List
+
+
 class Solution:
-    def fizzBuzz(self, n: int) -> list[str]:
+    def fizzBuzz(self, n: int) -> List[str]:
         result = []
         for i in range(1, n + 1):
             if i % 3 == 0 and i % 5 == 0:
@@ -27,6 +30,7 @@ class Solution:
                 result.append(str(i))
         return result
 
+
 def test_solution(nums, result):
     solution = Solution.fizzBuzz(Solution, nums)
     assert solution == result, \
@@ -34,7 +38,9 @@ def test_solution(nums, result):
     return "assepted - {} equal to {}".format(solution, result)
 
 
-print("Test #1: " + test_solution(3, ["1","2","Fizz"]))
-print("Test #2: " + test_solution(5, ["1","2","Fizz","4","Buzz"]))
-print("Test #3: " + test_solution(15, ["1", "2", "Fizz", "4", "Buzz",
-    "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]))
+print("Test #1: " + test_solution(3, ["1", "2", "Fizz"]))
+print("Test #2: " + test_solution(5, ["1", "2", "Fizz", "4", "Buzz"]))
+print("Test #3: " + test_solution(15, [
+    "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz",
+    "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"
+]))
