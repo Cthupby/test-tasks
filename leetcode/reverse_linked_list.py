@@ -1,17 +1,15 @@
 """
-876. Middle of the Linked List
+206. Reverse Linked List
 
-Given the head of a singly linked list, return the middle
-node of the linked list.
-
-If there are two middle nodes, return the second middle node.
+Given the head of a singly linked list, reverse the list,
+and return the reversed list.
 
 Example:
 
 Input: head = [1,2,3,4,5]
-Output: [3,4,5]
-Explanation: The middle node of the list is node 3.
+Output: [5,4,3,2,1]
 """
+from typing import Optional
 
 
 # Definition for singly-linked list.
@@ -22,20 +20,22 @@ class ListNode:
 
 
 class Solution:
-    def middleNode(self, head: ListNode) -> ListNode:
-        h = head
-        n = 0
-        while h:
-            n += 1
-            h = h.next
-        result = head
-        for i in range(n // 2):
-            result = result.next
-        return result
+    def reverseList(
+        self,
+        head: Optional[ListNode]
+    ) -> Optional[ListNode]:
+        curr = head
+        first = None
+        while curr:
+            temp = curr.next
+            curr.next = first
+            first = curr
+            curr = temp
+        return first
 
 
 def test_solution(head, result):
-    solution = Solution.middleNode(Solution, head)
+    solution = Solution.reverseList(Solution, head)
     sol, res = "", ""
     while solution:
         sol += str(solution.val)
@@ -50,5 +50,5 @@ def test_solution(head, result):
 
 print("Test #1: " + test_solution(
     ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, None))))),
-    ListNode(3, ListNode(4, ListNode(5, None))),
+    ListNode(5, ListNode(4, ListNode(3, ListNode(2, ListNode(1, None))))),
 ))
